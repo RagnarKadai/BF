@@ -1,7 +1,6 @@
 <template>
   <div class="bg-primary min-vh-100 ming-vw-100 d-flex flex-column">
     <Header />
-    <h1>siia lähevad postitused</h1>
     <div style="margin-top: auto">
       <Footer />
     </div>
