@@ -2,6 +2,7 @@
   <div class="bg-primary min-vh-100 ming-vw-100 d-flex flex-column">
     <Header />
     <h1>siia lähevad postitused</h1>
+    // <posts_component></posts_component>
     <div style="margin-top: auto">
       <Footer />
     </div>
@@ -11,13 +12,21 @@
 <script>
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
+// import posts_component from '@/components/posts_component.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     Header,
+    // posts_component,
     Footer
+  },
+  data() {
+   return {
+    //postList:[]
   }
+  },
+  methods: {}
 }
 </script>
