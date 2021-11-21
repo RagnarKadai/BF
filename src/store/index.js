@@ -127,5 +127,10 @@ export default new Vuex.Store({
      state.post.forEach(post => {
      post.likes += 1;
      })
+  },
+   ResetLikes: state => {
+    state.postsList.forEach(post => {
+      post.likes == 0;
+    })
   }
 }})

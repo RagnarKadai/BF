@@ -3,16 +3,17 @@
  <div class="flex-container" id="posts" v-for = "post in postsList" :key="post.userId">
  <div>
   <div class="small flex-row">
-   <img src={{post.userIcon}} style="width: 35px; height: 35px; border-radius: 50%"></img>
+   <img src={{post.userIcon}} style="width: 35px; height: 35px; border-radius: 50%"/>
    <p>{{post.userName}}</p>
    <p class="time">{{post.userPostTime}}</p>
- </div>
- <div>
-  <img src ={{post.userPostImage}} alt=""></img>
-  <h2>{{post.userPostContent}}</h2>
+  </div>
+  <div>
+   <img src ={{post.userPostImage}} alt=""/>
+   <h2>{{post.userPostContent}}</h2>
   </div>
   <button><i class="fa fa-thumbs-up"></i></button>
-  </div>
+</div>
+</div>
 </div>
 </template>
 
