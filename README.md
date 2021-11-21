@@ -1,4 +1,4 @@
-# hw3
+# WAD BF HW3
 
 ## Project setup
 ```
