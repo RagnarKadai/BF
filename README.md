@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-# BF
-Web Application Development group BF
-
-style.cee -- CSS file
-
-index.html -- HTML file for main page
-
-login.html -- HTML file for login page, that takes to the main page.
-=======
-# wad
+# WAD BF HW3
 
 ## Project setup
 ```
@@ -32,4 +22,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
->>>>>>> b8f44b8765294a3b82e5a9226b1153db7dc83d32

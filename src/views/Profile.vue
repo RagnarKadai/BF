@@ -2,7 +2,7 @@
   <div class="bg-primary min-vh-100 ming-vw-100 d-flex flex-column">
     <Header />
     <div style="margin-top: auto">
-      <Footer />
+    <Footer />
     </div>
   </div>
 </template>

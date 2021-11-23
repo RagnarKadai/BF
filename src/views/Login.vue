@@ -8,12 +8,12 @@
             <h3 class="mb-5"><img src="../assets/logo.jpg" style="width: 60px">Welcome to PostIt!</h3>
             <form>
             <div class="form-outline mb-4">
-              <input type="email" id="emai" class="form-control form-control-lg" v-model="email" />
+              <input type="email" id="emai" class="form-control form-control-lg"/>
               <label class="form-label" for="email">Email</label>
             </div>
 
             <div class="form-outline mb-4">
-              <input type="password" id="password" class="form-control form-control-lg" v-model="password"/>
+              <input type="password" id="password" class="form-control form-control-lg"/>
               <label class="form-label" for="password">Password</label>
             </div>
               <router-link to="/home" ><button class="btn btn-primary btn-lg btn-block" type="submit" value="Login">Login</button></router-link>
