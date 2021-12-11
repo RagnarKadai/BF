@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <h1>Posts page</h1>
     <%- include('../partials/navbar.ejs') %>
+      <div class="flex-container">
         <div class="posts list">
             <h2>All posts</h2>
             <% if (posts.length> 0) { %>
@@ -25,13 +25,14 @@
                             <%= post.body %>
                         </p>
 
-                        <!--todo: TEE LIKE BUTTON-->
+                        <button>fa-icon</button>
                     </a>
                     <% }) %>
                         <% } else { %>
                             <p>You did not post anything...</p>
                             <% } %>
         </div>
+      </div>
         <%- include('../partials/footer.ejs') %>
 </body>
 
