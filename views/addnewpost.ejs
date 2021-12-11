@@ -3,15 +3,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=>, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+
 <title> Create a post</title>
 <!-- millegipärast ei pushi lisatud infot DBsse ülesse-->
 <body>
       <%- include('../partials/navbar.ejs') %>
       <div class="flex-container">
-    <h1>Create a post</h1>
 
-        <br>
         <div class="create-post">
+          <h1>Create a post</h1>
+
             <form action="/posts" method="POST">
                 <label for="title">Post title:</label>
                 <input type="text" id="title" name="title" required><br><br>
