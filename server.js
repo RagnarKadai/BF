@@ -5,29 +5,16 @@ const server = http.createServer((req, res) => {
     let path = './views/'
     switch (req.url) {
         case '/':
-<<<<<<< HEAD
             path += 'index.ejs';
             break;
         case '/posts':
-            path += 'posts.ejs';
+            path += 'posts2.ejs';
             break;
         case '/contactus':
             path += 'contactus.ejs';
             break;
         default:
             path += '404.ejs';
-=======
-            path += 'index.html';
-            break;
-        case '/posts':
-            path += 'posts.html';
-            break;
-        case '/contactus':
-            path += 'contactus.html';
-            break;
-        default:
-            path += '404.html';
->>>>>>> 3c38a32966386b27e379013f172be88144dd92a3
             break;
     }
     fs.readFile(path, (err, data) => {

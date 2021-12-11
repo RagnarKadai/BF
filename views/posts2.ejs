@@ -10,29 +10,68 @@
 </head>
 
 <body>
+    <div>
     <%- include('../partials/navbar.ejs') %>
-      <div class="flex-container">
-        <div class="posts list">
-            <h2>All posts</h2>
-            <% if (posts.length> 0) { %>
+    </div>
+      <div class="posts-container" style="height: auto;">
+        <div>
+            <h1 style="text-align: center">All posts</h1>
+            <% if (posts.length > 0) { %>
                 <% posts.forEach(post=> { %>
-                    <a class="singlepost" href="/singlepost/<%= post.id %>">
-                        <h3 class="title">
-                            <%= post.title %>
-                        </h3>
-                        <p class="body">
-                            <%= post.body %>
-                        </p>
-
-                        <button class="fa fa-thumbs-up"></button>
-                    </a>
+                    <div class="post">
+                        <a class="singlepost" href="/singlepost/<%= post.id %>" style="margin-bottom: -40px;">
+                            <div style="display: flex">
+                                <% if (post.icon.length < 2) { %>
+                                    <img src="https://iptc.org/wp-content/uploads/2018/05/avatar-anonymous-300x300.png" style="width:40px; height:40px; margin-top: 10px; border-radius: 50%;">
+                                    <h5 style="margin-left: 5px"><%= post.name %></h5>
+                                <% } else { %>
+                                    <img src="<%= post.icon %>" style="width:40px; height:40px; margin-top: 10px; border-radius: 50%;">
+                                    <h5 style="margin-left: 5px"><%= post.name %></h5>
+                                <% } %>
+                            </div>
+                            <h3 style="text-align: left; margin-top: -5px"><%= post.title %></h3>
+                            <% if (post.urllink.length > 2) { %>
+                                <img src="<%= post.urllink %>" alt="">
+                            <% } else { %>
+                            <% } %>
+                            <p class="body" style="text-align: left;"><%= post.body %></p>
+                        </a>
+                        <div style="display: flex; margin-top: -5px; margin-left: -16px;">
+                            <a class="likes" data-like="<% post.id %>" id="notClicked">
+                                <button class="fa fa-thumbs-up"></button>
+                            </a>
+                            <p style="margin-top: 38px; margin-left: -20px;"><%= post.Likes %></p>
+                        </div>
+                    </div>
                     <% }) %>
                         <% } else { %>
                             <p>You did not post anything...</p>
-                            <% } %>
+                    <% } %>
         </div>
       </div>
+      <div>
         <%- include('../partials/footer.ejs') %>
+      </div>
+      <script>
+          /**
+          const likes = document.querySelectorAll("a.likes")
+          likes.forEach(btn => {
+              btn.addEventListener("click", (event) => {
+                if (btn.id == "notClicked") {
+                    const id = btn.dataset.like
+                    console.log(id)
+                    const endpoint = `/posts/${id}`
+                    btn.id = "clicked"
+                    fetch(endpoint, {
+                        method: "PUT",
+                    }).then(window.location.href = '/posts')
+                    } else {
+                        console.log("Clicked")
+                        event.preventDefault();
+                    }
+                })
+              })**/
+      </script>
 </body>
 
 </html>

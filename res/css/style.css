@@ -7,6 +7,7 @@ html, body {
   padding: 0;
   background-color: #1677bc;
 }
+
 navbar {
   position: absolute;
   top: 0px;
@@ -15,7 +16,7 @@ navbar {
 }
 
 nav {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   background-color: #ffffff;
   align-items: center;
@@ -69,6 +70,14 @@ li a:hover {
   background-color: lightgray;
 }
 
+.navlink :hover{
+  background-color: lightgray;
+}
+.navlink {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 div button {
   height: 32px;
   width: 20%;
@@ -113,6 +122,36 @@ footer {
   flex-direction: column;
 }
 
+.posts-container{
+  background-color: white;
+  width: 60%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.posts-container > div {
+  height: auto;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  margin-top: 10px;
+  border-bottom-style: ridge;
+}
+
 .flex-row {
   display: flex;
 }
@@ -140,14 +179,14 @@ div img ~ p {
   margin-left: auto;
 }
 
-.flex-container h2 {
+.flex-container h2, .posts-container h2 {
   color: black;
   margin: 15px 15px;
   font-size: 20px;
   font-weight: lighter;
 }
 
-.flex-container img {
+.flex-container img, .posts-container img {
   width: 100%;
 }
 
@@ -166,7 +205,7 @@ div img ~ p {
 }
 
 
-.flex-container button {
+.flex-container button, .posts-container button {
   height: 32px;
   width: 40px;
   margin: 15px 15px;
@@ -292,3 +331,9 @@ nav div user menu-content {
 }
 
 .show {display: block;}
+
+
+.navcolumn {
+  float: left;
+  width:30%;
+}

@@ -1,15 +1,21 @@
-<nav>
-  <div>
-    <img src="images/logo.JPG" alt="PostIt">
-    <input type="text"><button>Search</button>
-    <div class="avatar">
-      <img src="images/me.png" alt="Avatar">
+<nav style="margin-bottom: 10px;">
+  <div style="padding: 0; padding-top: 10px;">
+    <div style="display: flex; padding: 0">
+      <div class="navcolumn">
+        <img src="./images/logo.JPG" alt="PostIt">
+      </div>
+      <div class="navcolumn">
+        <input type="text" style="width:80%"><button>Search</button>
+      </div>
+      <div class="avatar navcolumn">
+        <img src="./images/me.png" alt="Avatar">
+      </div>
     </div>
-    <ul class="links">
-      <li><a href="/">Home </a></li>
-      <li><a href="/posts">Posts page</a></li>
-      <li><a href="/contactus">Contact us</a></li>
-      <li><a href="/addnewpost">New post</a></li>
-    </ul>
+      <div style="width: 100%; display: flex; padding-left: 0; padding-right: 0;">
+        <div class="navlink" style="width: 25%"><a href="/">Home </a></div>
+        <div class="navlink" style="width: 25%"><a href="/posts">Posts page</a></div>
+        <div class="navlink" style="width: 25%"><a href="/contactus">Contact us</a></div>
+        <div class="navlink" style="width: 25%"><a href="/addnewpost">New post</a></div>
+      </div>
   </div>
 </nav>

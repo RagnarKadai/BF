@@ -14,13 +14,17 @@
           <h1>Create a post</h1>
 
             <form action="/posts" method="POST">
-                <label for="title">Post title:</label>
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="icon">Icon: </label>
+                <input type="text" id="icon" name="icon"><br><br>
+                <label for="title">Title:</label>
                 <input type="text" id="title" name="title" required><br><br>
-                <label for="body">Post body:</label>
+                <label for="body">Text:</label>
                 <input type="text" id="body" name="body" required><br><br>
-                <label for="urllink"> URL link:</label>
-                <input type="text" id="urllink" name="urllink"></textarea><br><br>
-                <button>Submit</button>
+                <label for="urllink">Picture:</label>
+                <input type="text" id="urllink" name="urllink"></textarea><br>
+                <button style="margin-top: 5px">Submit</button>
             </form>
         </div>
       </div>
