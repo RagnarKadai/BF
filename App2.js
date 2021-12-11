@@ -100,8 +100,8 @@ app.post('/posts', async (req, res) => {
 app.get('/addnewpost', (req, res) => {
     res.render('addnewpost');
 =======
-app.get('/create', (req, res) => {
-    res.render('create');
+app.get('/addnewpost', (req, res) => {
+    res.render('addnewpost');
 >>>>>>> 3c38a32966386b27e379013f172be88144dd92a3
 });
 
