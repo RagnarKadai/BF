@@ -9,11 +9,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 app.use(express.static('Public'));
-<<<<<<< HEAD
-=======
+
 app.use(express.static(__dirname + '/res'));
 
->>>>>>> 3c38a32966386b27e379013f172be88144dd92a3
+
 app.listen(3000, () => {
     console.log("Server is listening to port 3000")
 });
@@ -21,14 +20,13 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-<<<<<<< HEAD
-=======
+
 app.get('/contactus', (req, res) => {
     // siit ära jäetud res.sendFile...
     res.render('contactus');
 });
 
->>>>>>> 3c38a32966386b27e379013f172be88144dd92a3
+
 app.get('/posts', async (req, res) => {
     try {
         console.log("get posts request has arrived");
@@ -96,13 +94,9 @@ app.post('/posts', async (req, res) => {
     }
 });
 
-<<<<<<< HEAD
 app.get('/addnewpost', (req, res) => {
     res.render('addnewpost');
-=======
-app.get('/addnewpost', (req, res) => {
-    res.render('addnewpost');
->>>>>>> 3c38a32966386b27e379013f172be88144dd92a3
+
 });
 
 app.use((req, res) => {
