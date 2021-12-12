@@ -7,7 +7,6 @@ html, body {
   padding: 0;
   background-color: #1677bc;
 }
-
 navbar {
   position: absolute;
   top: 0px;
@@ -16,7 +15,7 @@ navbar {
 }
 
 nav {
-  max-width: 100%;
+  width: 100%;
   display: flex;
   background-color: #ffffff;
   align-items: center;
@@ -27,7 +26,8 @@ nav div{
   width: 100%;
   height: auto;
   flex-grow: 3;
-  padding: 10px;
+  padding: 0;
+  padding-top: 10px;
 }
 
 nav div img {
@@ -36,28 +36,22 @@ nav div img {
   margin-right: 30px;
 }
 
-nav div input[type=text] {
-  width: 30%;
+nav div input[type=text], .create-post input[type=text] {
+  width: 80%;
   padding: 5px;
   border: 2px solid lightgray;
   margin-left: auto;
   margin-right: auto;
 }
 
-nav div input[type=text]:focus {
+nav div input[type=text]:focus,  .create-post input[type=text]:focus {
   background-color: lightgray;
 }
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.navlinks {
+  display: flex;
 }
-li {
-  display: inline;
-}
-li {
-  float: left;
+navlink {
+  width: 25%;
 }
 
 a {
@@ -66,16 +60,8 @@ a {
   text-decoration: none;
   text-align: center;
 }
-li a:hover {
+.navlink:hover {
   background-color: lightgray;
-}
-
-.navlink :hover{
-  background-color: lightgray;
-}
-.navlink {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 div button {
@@ -99,6 +85,20 @@ div button {
   top: 10px;
 }
 
+.create-post {
+  text-align: center;
+}
+
+.create-post form {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.create-post input[type=text] {
+  display: flex;
+  flex-direction: column;
+}
+
 footer {
    position:absolute;
    width:100%;
@@ -118,38 +118,9 @@ footer {
   height: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0px;
   display: flex;
   flex-direction: column;
-}
-
-.posts-container{
-  background-color: white;
-  width: 60%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.posts-container > div {
-  height: auto;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  background-color: white;
-  width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 4px;
-  color: gray;
-  display: flex;
-  flex-direction: column;
-}
-
-.post {
-  margin-top: 10px;
-  border-bottom-style: ridge;
 }
 
 .flex-row {
@@ -170,6 +141,10 @@ footer {
   flex-direction: column;
 }
 
+.flex-container p {
+  margin-left: 10px;
+}
+
 div img ~ p {
   margin: 15px 15px;
   font-weight: lighter;
@@ -179,14 +154,14 @@ div img ~ p {
   margin-left: auto;
 }
 
-.flex-container h2, .posts-container h2 {
+.flex-container h2 {
   color: black;
   margin: 15px 15px;
   font-size: 20px;
   font-weight: lighter;
 }
 
-.flex-container img, .posts-container img {
+.flex-container img {
   width: 100%;
 }
 
@@ -205,7 +180,7 @@ div img ~ p {
 }
 
 
-.flex-container button, .posts-container button {
+.flex-container button {
   height: 32px;
   width: 40px;
   margin: 15px 15px;
@@ -331,9 +306,3 @@ nav div user menu-content {
 }
 
 .show {display: block;}
-
-
-.navcolumn {
-  float: left;
-  width:30%;
-}
