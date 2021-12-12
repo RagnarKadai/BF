@@ -36,11 +36,11 @@
                             <% } %>
                             <p class="body" style="text-align: left;"><%= post.body %></p>
                         </a>
-                        <div style="display: flex; margin-top: -5px; margin-left: -16px;">
-                            <a class="likes" data-like="<% post.id %>" id="notClicked">
+                        <div style="display: flex;">
+                            <a class="like" data-likes="<%= post.id %>" id="notClicked">
                                 <button class="fa fa-thumbs-up"></button>
                             </a>
-                            <p style="margin-top: 38px; margin-left: -20px;"><%= post.likes %></p>
+                            <p style="margin-left: 10px; margin-top: 20px"><%= post.likes %></p>
                         </div>
                     </div>
                     <% }) %>
@@ -53,24 +53,25 @@
         <%- include('../partials/footer.ejs') %>
       </div>
       <script>
-          /**
-          const likes = document.querySelectorAll("a.likes")
+          const likes = document.querySelectorAll("a.like")
           likes.forEach(btn => {
-              btn.addEventListener("click", (event) => {
-                if (btn.id == "notClicked") {
-                    const id = btn.dataset.like
+              btn.addEventListener("click", (e) => {
+                if (btn.id == "notClicked"){
+                    let id = btn.dataset.likes
                     console.log(id)
                     const endpoint = `/posts/${id}`
                     btn.id = "clicked"
+                    btn.classList.remove("like")
+                    btn.classList.add("clickedLike")
                     fetch(endpoint, {
                         method: "PUT",
-                    }).then(window.location.href = '/posts')
-                    } else {
-                        console.log("Clicked")
-                        event.preventDefault();
-                    }
-                })
-              })**/
+                    })
+                }
+                else{
+                    console.log("clicked")
+                    event.preventDefault()
+                }
+                })})
       </script>
 </body>
 

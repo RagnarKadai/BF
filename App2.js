@@ -89,15 +89,15 @@ app.put("/posts/:id", async (req, res) => {
     try {
         const { id } = req.params;
         const singlepost = await pool.query(
-            "SELECT * FROM posts WHERE id = $1", [id]
-          );
+            "SELECT * FROM nodetable WHERE id = $1", [id]
+        );
         const post = singlepost.rows[0];
-        const newLikes = post.likes + 1;
-
+        console.log([id, post.title, post.body, post.urllink, post.name, post.icon])
+        const likes = post.likes + 1;
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE nodetable SET (title, body, urllink, likes, name, icon) = ($2, $3, $4, $5, $6, $7) WHERE id = $1",
-            [id, post.title, post.body, post.urllink, post.name, post.icon, newLikes]
+            "UPDATE nodetable SET (title, body, urllink, name, icon, likes) = ($2, $3, $4, $5, $6, $7) WHERE id = $1",
+            [id, post.title, post.body, post.urllink, post.name, post.icon, likes]
         );
         res.json(post);
     } catch (err) {
