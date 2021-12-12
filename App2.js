@@ -77,7 +77,7 @@ app.post('/posts', async (req, res) => {
         const post = req.body;
         console.log(post);
         const newpost = await pool.query(
-            "INSERT INTO nodetable(title, body, urllink, name, icon) values ($1, $2, $3, $4, $5) RETURNING * ", [post.title, post.body, post.urllink, post.name, post.icon]
+            "INSERT INTO nodetable(title, body, urllink, likes, name, icon) values ($1, $2, $3, $4, $5, $6) RETURNING * ", [post.title, post.body, post.urllink, 0, post.name, post.icon]
         );
         res.redirect('posts2');
     } catch (err) {
@@ -85,18 +85,18 @@ app.post('/posts', async (req, res) => {
     }
 });
 
-app.put("/posts/:id", jsonParser, async (req, res) => {
+app.put("/posts/:id", async (req, res) => {
     try {
         const { id } = req.params;
         const singlepost = await pool.query(
             "SELECT * FROM posts WHERE id = $1", [id]
           );
         const post = singlepost.rows[0];
-        const newLikes = post.Likes + 1;
+        const newLikes = post.likes + 1;
 
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE nodetable SET (title, body, urllink, Likes, name, icon) = ($2, $3, $4, $5, $6, $7) WHERE id = $1",
+            "UPDATE nodetable SET (title, body, urllink, likes, name, icon) = ($2, $3, $4, $5, $6, $7) WHERE id = $1",
             [id, post.title, post.body, post.urllink, post.name, post.icon, newLikes]
         );
         res.json(post);
